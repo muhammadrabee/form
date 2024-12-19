@@ -60,7 +60,7 @@ const Form = () => {
            <input  type="checkbox"/> Remember me
        </div>
         <button type='submit'  className='btn'>Submit</button>
-      <p>Don't Have Account?<a href="#"> Sign in</a></p>
+      <p>Already Have Account?<a href="#"> Login</a></p>
       </form>
     </div>
    </div>

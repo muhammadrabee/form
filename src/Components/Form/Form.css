@@ -1,11 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    cursor: pointer;
-    cursor:url(./images/Arrow.cur),auto ;           
 }
 
 .body {
+    cursor: pointer;
+    cursor:url(./images/Arrow.cur),auto ;           
     background: linear-gradient(to left , rgba(255, 255, 0, 0.603), rgba(255, 0, 0, 0.685)), url(./images/windows-11-stock-oranage-abstract-white-background-3840x2400-8992.png);
     /* background-image: url(windows-10-polygon-4k-fz.jpg); */
     width: 100vw;
@@ -24,7 +24,7 @@
 
 .box {
     width: 400px;
-height: 400px;
+height: 450px;
     /* border: 1px solid rgb(196, 195, 192); */
     /* border-radius: 15px; */
     display: flex;
@@ -61,7 +61,7 @@ color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
 
 }
 input{
-margin-top: 10px;
+margin-top: 15px;
 
 }
 input::placeholder {
