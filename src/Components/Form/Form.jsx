@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import toast from 'react-hot-toast'
+import './Form.css'
 
 const Form = () => {
   const [name,updateName]=useState('')
   const [email,updateEmail]=useState('')
   const [password,updatePassword]=useState('')
   const [confirmPassword,updateConfirmPassword]=useState('')
+
+  let dataArray=[];
 
   const Formsubmit=(e)=>{
       e.preventDefault(); 
@@ -19,8 +22,11 @@ const Form = () => {
       Email:email,
       Password:password
     }
-    let jsondata=JSON.stringify(data);
-    localStorage.setItem('User_data',jsondata)
+    dataArray.push(data);
+
+    let jsondata=JSON.stringify(dataArray);
+    localStorage.setItem(`${name}`,jsondata)
+    toast.success('Data Saved successfully')
     
     
 
@@ -28,29 +34,33 @@ const Form = () => {
       }
   
   return (
-   <div style={{height:'100vh'}}>
-     <div className='d-flex justify-content-center align-item-center br-2 m-auto ' style={{border:'1px solid black',width:'400px',height:'400px',borderRadius:'10px'}}>
+   <div className='body' >
+     <div className=' box'>
       <form onSubmit={Formsubmit} className='my-auto'>
-        <h1 className='text-center'>Signup</h1>
-        <div>
+        <h2>Signup</h2>
+        <div className='inputs'>
             <label htmlFor="forName"></label>
             <input type="text" id='forName' onChange={(e)=>{
               updateName(e.target.value)
-            }} className='mb-3' placeholder='Enter Your Name' required/>
+            }}  placeholder='Enter Your Name' required/>
         </div>
-        <div>
+        <div className='inputs'>
             <label htmlFor="forEmail"></label>
-            <input type="text" id='forEmail' onChange={(e)=>updateEmail(e.target.value)} className='mb-3' placeholder='Enter Your Email' required/>
+            <input type="text" id='forEmail' onChange={(e)=>updateEmail(e.target.value)}  placeholder='Enter Your Email' required/>
         </div>
-        <div>
+        <div className='inputs'>
             <label htmlFor="forPass"></label>
-            <input type="text" id='forPass' className='mb-3' onChange={(e)=>updatePassword(e.target.value)} placeholder='Enter Your Password' required/>
+            <input type="text" id='forPass'  onChange={(e)=>updatePassword(e.target.value)} placeholder='Enter Your Password' required/>
         </div>
-        <div>
+        <div className='inputs'>
             <label htmlFor="forconPass"></label>
-            <input type="text" id='forconPass' className='mb-3' onChange={(e)=>updateConfirmPassword(e.target.value)} placeholder='Confirm Your Password' required/>
+            <input type="text" id='forconPass'  onChange={(e)=>updateConfirmPassword(e.target.value)} placeholder='Confirm Your Password' required/>
         </div>
-        <button type='submit'  className='d-block m-auto'>Submit</button>
+        <div className="checkbox mb-1">
+           <input  type="checkbox"/> Remember me
+       </div>
+        <button type='submit'  className='btn'>Submit</button>
+      <p>Don't Have Account?<a href="#"> Sign in</a></p>
       </form>
     </div>
    </div>
