@@ -5,8 +5,8 @@
 
 .body {
     cursor: pointer;
-    cursor:url(./images/Arrow.cur),auto ;           
-    background: linear-gradient(to left , rgba(255, 255, 0, 0.603), rgba(255, 0, 0, 0.685)), url(./images/windows-11-stock-oranage-abstract-white-background-3840x2400-8992.png);
+    cursor:url('./images/Arrow.cur'),auto ;           
+    background: linear-gradient(to left , rgba(255, 255, 0, 0.603), rgba(255, 0, 0, 0.685)), url('./images/windows-11-stock-oranage-abstract-white-background-3840x2400-8992.png');
     /* background-image: url(windows-10-polygon-4k-fz.jpg); */
     width: 100vw;
     height: 100vh;
